@@ -2,6 +2,7 @@
   <div id="app">
     <nav class="navbar navbar-expand-lg" >
       <router-link class="nav-item active" to='/posts'> Posts </router-link>
+      <router-link class="nav-item active" to='/add'> Add </router-link>
     </nav>
     <router-view/>
   </div>

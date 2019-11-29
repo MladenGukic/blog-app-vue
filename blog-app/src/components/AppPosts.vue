@@ -1,16 +1,38 @@
 <template>
   <div class="hello">
-    <h1></h1>
-    <h3>Installed CLI Plugins</h3>
-    <h3>Essential Links</h3>
-    <h3>Ecosystem</h3>
+    <div>
+      <h4>Posts</h4>
+      <ul v-for="post in posts" :key="post.id">
+        <li>
+          {{post.title}}
+          <button class="btn btn-primary" @click="navigateToViewPost(post.id)">View post</button>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
+import { postService } from '../services/post-service'
 export default {
   name: 'AppPosts',
-  
+    data() {
+      return {
+         posts: [],
+      }
+    },
+
+    created() {
+      postService.getAll()
+      .then(response => 
+      this.posts = response.data)
+    },
+
+    methods: {
+      navigateToViewPost(id) {
+        this.$router.push( {name: 'view', params: {id}} )
+      }
+    }
 }
 </script>
 
