@@ -1,8 +1,8 @@
 <template>
   <div>
         <form @submit.prevent="addPost">
-            <input placeholder="Post title" type="text" v-model="form.title" />
-            <input placeholder="Post text" type="text" v-model="form.text" />
+            <input placeholder="Post title" type="text" v-model="form.title" minlength="2" required/>
+            <input placeholder="Post text" type="text" v-model="form.text" maxlength="300" required/>
             <button type="submit" class="btn btn-primary"> Submit </button>
             <button type="button" class="btn btn-secondary" @click="resetForm"> Reset </button>
         </form>
