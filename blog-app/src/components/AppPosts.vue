@@ -4,6 +4,7 @@
       <h4>Posts</h4>
       <ul v-for="post in posts" :key="post.id">
         <li>
+          <span> comments: {{post.comments.length}} </span> |
           {{post.title}}
           <button class="btn btn-primary" @click="navigateToViewPost(post.id)">View post</button>
           <button class="btn btn-info" @click="navigateToEdit(post.id)">Edit</button>

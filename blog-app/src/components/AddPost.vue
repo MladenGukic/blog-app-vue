@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="form-group">
         <form @submit.prevent="onSubmit">
             <input placeholder="Post title" type="text" v-model="postForm.title" minlength="2" required/>
             <input placeholder="Post text" type="text" v-model="postForm.text" maxlength="300" required/>
