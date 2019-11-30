@@ -6,6 +6,7 @@
         <li>
           {{post.title}}
           <button class="btn btn-primary" @click="navigateToViewPost(post.id)">View post</button>
+          <button class="btn btn-info" @click="navigateToEdit(post.id)">Edit</button>
         </li>
       </ul>
     </div>
@@ -31,6 +32,10 @@ export default {
     methods: {
       navigateToViewPost(id) {
         this.$router.push( {name: 'view', params: {id}} )
+      },
+
+      navigateToEdit(id){
+        this.$router.push({name: 'edit', params: {id}} )
       }
     }
 }
