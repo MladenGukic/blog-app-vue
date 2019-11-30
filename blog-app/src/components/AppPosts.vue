@@ -7,6 +7,7 @@
           {{post.title}}
           <button class="btn btn-primary" @click="navigateToViewPost(post.id)">View post</button>
           <button class="btn btn-info" @click="navigateToEdit(post.id)">Edit</button>
+         <button type="submit" class="btn btn-danger" @click="deletePost(post.id)"> Delete </button>
         </li>
       </ul>
     </div>
@@ -36,6 +37,11 @@ export default {
 
       navigateToEdit(id){
         this.$router.push({name: 'edit', params: {id}} )
+      },
+
+      deletePost(id) {
+        postService.delete(id)
+        .then(this.posts = this.posts.filter(post => post.id !== id))
       }
     }
 }

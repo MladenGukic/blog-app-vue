@@ -2,6 +2,14 @@
   <div>
       <h1> {{post.title}} </h1>
       <h3> {{post.text}} </h3>
+
+        <!-- <div> 
+            <form class="form-group" @submit.prevent="addComment">
+            <input placeholder="Your comment" type="text" v-model="comment.text" required/>
+            <button type="submit" class="btn btn-primary"> Add </button>
+            </form>
+        </div> -->
+
   </div>    
 </template>
 
