@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <nav class="navbar navbar-expand-lg" >
+      <ul>
       <router-link class="nav-item active" to='/posts'> Posts </router-link>
       <router-link class="nav-item active" to='/add'> Add </router-link>
+    </ul>
     </nav>
     <router-view/>
   </div>
