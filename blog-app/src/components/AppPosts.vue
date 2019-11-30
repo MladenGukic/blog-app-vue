@@ -3,7 +3,9 @@
     <div>
       <h4>Posts</h4>
       <ul v-for="post in posts" :key="post.id">
+        <span></span>
         <li>
+          <span> created at: {{ post.createdAt | diffForHumans }} </span>
           <span> comments: {{post.comments.length}} </span> |
           {{post.title}}
           <button class="btn btn-primary" @click="navigateToViewPost(post.id)">View post</button>
@@ -16,6 +18,7 @@
 </template>
 
 <script>
+import { DateMixin } from '../mixins'
 import { postService } from '../services/post-service'
 export default {
   name: 'AppPosts',
@@ -44,7 +47,9 @@ export default {
         postService.delete(id)
         .then(this.posts = this.posts.filter(post => post.id !== id))
       }
-    }
+    },
+
+    mixins: [ DateMixin ]
 }
 </script>
 

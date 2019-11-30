@@ -2,6 +2,7 @@
     <div>
         <h1> {{post.title}} </h1>
         <h3> {{post.text}} </h3>
+        <span> created at: {{post.createdAt | formatDate}} {{ post.createdAt | diffForHumans }} </span>
         <div class="list-group">
             <h4>Comments: </h4>
             <li class="list-group-item" v-for="comment in comments" :key="comment.id">
@@ -14,6 +15,7 @@
 </template>
 
 <script>
+import { DateMixin } from '../mixins'
 import AddComment from './AddComment'
 import { postService } from '../services/post-service'
 export default {
@@ -46,7 +48,9 @@ export default {
         .then((response) => {this.post = response.data})
         })
     }
-  }
+  },
+
+  mixins: [ DateMixin ]
 }
 </script>
 
