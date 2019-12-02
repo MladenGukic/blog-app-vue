@@ -1,13 +1,13 @@
 <template>
-  <div class="hello">
-    <div>
-      <h4>Posts</h4>
-      <ul v-for="post in posts" :key="post.id">
+  <div class="container">
+    <div class="list-group row">
+      <h4>Posts:</h4>
+      <ul  v-for="post in posts" :key="post.id">
         <span></span>
-        <li>
-          <span> created at: {{ post.createdAt | diffForHumans }} </span>
+        <li class="list-group-item">
+          <span> created at: {{post.createdAt | formatDate}} {{ post.createdAt | diffForHumans }} </span>
           <span> comments: {{post.comments.length}} </span> |
-          {{post.title}}
+          {{post.title}} <br>
           <button class="btn btn-primary" @click="navigateToViewPost(post.id)">View post</button>
           <button class="btn btn-info" @click="navigateToEdit(post.id)">Edit</button>
          <button type="submit" class="btn btn-danger" @click="deletePost(post.id)"> Delete </button>
@@ -55,8 +55,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+h4 {
+  margin: 40px 40px 0;
 }
 ul {
   list-style-type: none;

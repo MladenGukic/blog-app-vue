@@ -1,7 +1,7 @@
 <template>
     <div class="form-group"> 
-        <form class="form-group" @submit.prevent="onSubmit">
-            <textarea placeholder="Your comment" v-model="comment.text" required/>
+        <form class="form-control-sm" @submit.prevent="onSubmit">
+            <textarea class="form-control" placeholder="Your comment" v-model="comment.text" required/>
             <button type="submit" class="btn btn-primary"> Add </button>
         </form>
     </div>

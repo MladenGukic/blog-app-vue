@@ -1,8 +1,8 @@
 <template>
   <div class="form-group">
-        <form @submit.prevent="onSubmit">
-            <input placeholder="Post title" type="text" v-model="postForm.title" minlength="2" required/>
-            <input placeholder="Post text" type="text" v-model="postForm.text" maxlength="300" required/>
+        <form class="form-control-lg " @submit.prevent="onSubmit">
+            <input class="form-control form-control-lg" placeholder="Post title" type="text" v-model="postForm.title" minlength="2" required/>
+            <input class="form-control form-control-lg" placeholder="Post text" type="text" v-model="postForm.text" maxlength="300" required/>
             <button type="submit" class="btn btn-primary"> Submit </button>
             <button type="button" class="btn btn-secondary" @click="resetForm"> Reset </button>
         </form>
@@ -15,8 +15,7 @@ export default {
     data() {
         return {
              form: {title: "", text: ""},
-             post: {}
-
+             post: {},
         }
     },
 

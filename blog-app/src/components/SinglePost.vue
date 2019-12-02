@@ -56,4 +56,25 @@ export default {
 
 <style>
 
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	box-sizing: content-box;
+}
+.container{
+	background-color: #f5f5f5;
+	border-radius: 89px;
+}
+
+h3 {
+  margin: 40px 0 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
 </style>

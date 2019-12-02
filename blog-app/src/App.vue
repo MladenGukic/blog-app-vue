@@ -1,9 +1,13 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-expand-lg" >
-      <ul>
-      <router-link class="nav-item active" to='/posts'> Posts </router-link>
-      <router-link class="nav-item active" to='/add'> Add </router-link>
+    <nav class="navbar navbar-expand-sm bg-primary navbar-light" >
+      <ul class="nav-bar-nav">
+        <li class="nav-item active">
+      <router-link class="nav-link" to='/posts'> Posts </router-link>
+        </li>
+        <li class="nav-item active">
+      <router-link class="nav-link" to='/add'> Add </router-link>
+        </li>
     </ul>
     </nav>
     <router-view/>
@@ -27,4 +31,9 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.nav-link {
+   color: rgba(255,255,255,.5)
+}
+
 </style>
